@@ -1,0 +1,29 @@
+.navbar {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    border-bottom: 1px solid white;
+    background-color: rgba(93, 215, 222, 0.6);
+}
+.links {
+    margin-left: auto;
+}
+
+.WebsiteName {
+    font-size: 40px;
+    color: #a6622b;
+}
+
+.navbar a {
+    font-size: 30px;
+    margin-left: 16px;
+    text-decoration: none;
+    padding: 6px;
+}
+
+.navbar a:hover {
+    color: #a6622b;
+}
+
