@@ -1,5 +1,4 @@
 .PlayerStatsPage {
-    text-align: center;
     background-color: rgba(228, 228, 228, 0.733);
     background-size: 800px;
 }
@@ -10,4 +9,9 @@
 
 .playerPortrait {
     align-self: center;    
+}
+
+.streamPlayer {
+    align-self: flex-end;
+    justify-self: right;
 }
