@@ -35,11 +35,11 @@ function App() {
           />
 
           <Route
-            path="/diazbiffle"
+            path="/HusKerrs"
             element={
               <PlayerStatsPage
-                name="diazbiffle"
-                realname="Diaz"
+                name="HusKerrs"
+                realname="Jordan Thomas"
                 earnings={230658.34}
               />
             }
