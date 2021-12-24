@@ -1,42 +1,40 @@
 import React, { useState, useEffect } from "react";
 import "../Css_Styles/PlayerStatsPage.css";
-import player from "../assets/playerPics/diazbiffle.jpeg";
+
 import ReactPlayer from "react-player";
 import api from "../API/api";
 import axios from "axios";
 import { CLIENT_ID, CLIENT_SECRET, TWITCH_GET_TOKEN, TWITCH_GET_USER} from "../config/consts";
+import { getTwitchToken } from "../utils/authUser";
 
 const PlayerStatsPage = (props) => {
   const [name, setName] = useState(props.name);
-  const [realName, setRealName] = useState(props.realName);
-  const [earnings, setEarnings] = useState(205495.5);
+  const [playerIcon, setPlayerIcon] = useState();
+    //get from a different api, or maybe webscrape from stats page.
+  //const [realName, setRealName] = useState(props.realName);
+  // const [earnings, setEarnings] = useState(205495.5);
   const [player, setPlayer] = useState([]);
-  const [tok, setTok] = useState();
-  const [header, setHeader] = useState({});
-
-  const bodyParameters = {};
-
+  
+  //Get user Data
   useEffect(() => {
-    axios
-      .post(`${TWITCH_GET_TOKEN}?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&grant_type=client_credentials&scope=user_read`)
-      .then((response) => {
-        setTok(response.data.access_token); 
-        console.log({ Authorization: `Bearer ${response.data.access_token}`});
+      
+    getTwitchToken()
+    .then((token) => {
         const result = api.get(
-          `${TWITCH_GET_USER}?login=diazbiffle`,
-          {headers:  {"Authorization": `Bearer ${response.data.access_token}`,
+          `${TWITCH_GET_USER}?login=${name}`,
+          {headers:  {"Authorization": `Bearer ${token}`,
                       
         }}
           
-        ).then(userData => console.log("USER DATA " + JSON.stringify(userData))).catch(error => console.error("failed to get user " + error))
-        
-
+        ).then(userData => setPlayer(userData) ).catch(error => console.error("failed to get user " + error))
       })
       .catch((error) => {
         console.error("There was an error!", error);
       });
   },[]);
 
+
+  useEffect(() => {},[]);
 
   return (
     <div className="PlayerStatsPage">
