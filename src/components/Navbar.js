@@ -9,11 +9,7 @@ const Navbar = () => {
       </a>
       <div className="links">
 
-        <DropdownButton id="dropdown-basic-button" title="Players">
-          <Dropdown.Item href="/diazbiffle">DiazBiffle</Dropdown.Item>
-          <Dropdown.Item href="/Aydan">Aydan</Dropdown.Item>
-          <Dropdown.Item href="/HusKerrs">HusKerrs</Dropdown.Item>
-        </DropdownButton>
+        <a href = "/playerlist"> Player List </a>
 
         <a href="/PlayerStatsPage">Player Stats</a>
       </div>
