@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../Css_Styles/PlayerStatsPage.css";
-
 import ReactPlayer from "react-player";
 import api from "../API/api";
-import axios from "axios";
-import { CLIENT_ID, CLIENT_SECRET, TWITCH_GET_TOKEN, TWITCH_GET_USER} from "../config/consts";
+import {TWITCH_GET_USER} from "../config/consts";
 import { getTwitchToken } from "../utils/authUser";
 
 const PlayerStatsPage = (props) => {

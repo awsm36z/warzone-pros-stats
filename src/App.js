@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import PlayerStatsPage from "./pages/PlayerStatsPage";
 import PlayerList from "./pages/PlayerList";
-import { players } from "./config/players";
+import {players} from "./config/players";
 
 function App() {
   return (
@@ -17,9 +17,9 @@ function App() {
           <Route path="/playerstatspage" element={<Home />} />
 
           <Route path="/playerlist" element={<PlayerList />} />
-
          {players.map((name) =>(
            <Route path={`/${name}`} 
+            key = {name}
            element = {<PlayerStatsPage name = {name}/>}
            />
          ))}

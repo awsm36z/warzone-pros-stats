@@ -1,10 +1,14 @@
 import "../Css_Styles/PlayerList.css"
-import { players } from "../config/players";
+import {players, getPlayers} from "../config/players";
+
+
+const tempList = getPlayers()
 const PlayerList = () => {
+    console.log("hi " + players)
   return (
     <div className = "list">
         {players.map((name) =>(
-            <a href={`/${name}`}>{name}</a>
+            <a href={`/${name}`} key = {name}>{name}</a>
         ))}
     </div>
   );
