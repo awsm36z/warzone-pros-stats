@@ -1,15 +1,27 @@
-import "../Css_Styles/PlayerList.css"
-import {players, getPlayers} from "../config/players";
+import "../Css_Styles/PlayerList.css";
+import { getPlayers } from "../config/players";
+import { useState, useEffect } from "react";
 
-
-const tempList = getPlayers()
 const PlayerList = () => {
-    console.log("hi " + players)
+  const [players, setPlayers] = useState(["nickmercs", "swagg", "diazbiffle"]);
+
+  const createPlayersList = async () => {
+    getPlayers().then((list) => {
+      setPlayers(list);
+      console.log("\nhere is the list\n" + players);
+    });
+  };
+
+  useEffect(() => {
+    createPlayersList();
+  }, []);
   return (
-    <div className = "list">
-        {players.map((name) =>(
-            <a href={`/${name}`} key = {name}>{name}</a>
-        ))}
+    <div className="list">
+      {players.map((name) => (
+        <a href={`/${name}`} key={name}>
+          {name}
+        </a>
+      ))}
     </div>
   );
 };

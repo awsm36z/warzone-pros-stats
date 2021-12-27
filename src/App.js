@@ -5,9 +5,23 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import PlayerStatsPage from "./pages/PlayerStatsPage";
 import PlayerList from "./pages/PlayerList";
-import {players} from "./config/players";
+import { getPlayers } from "./config/players";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [players, setPlayers] = useState(["nickmercs","swagg","diazbiffle"]);
+
+ const createPlayersList = async () => {
+  getPlayers().then((list) => {
+    setPlayers(list)
+    console.log("\nhere is the list\n" + players)
+  })
+}
+
+  useEffect(() => {
+    createPlayersList()
+  }, []);
+
   return (
     <div className="App">
       <Navbar />
@@ -17,12 +31,13 @@ function App() {
           <Route path="/playerstatspage" element={<Home />} />
 
           <Route path="/playerlist" element={<PlayerList />} />
-         {players.map((name) =>(
-           <Route path={`/${name}`} 
-            key = {name}
-           element = {<PlayerStatsPage name = {name}/>}
-           />
-         ))}
+          {players.map((name) => (
+            <Route
+              path={`/${name}`}
+              key={name}
+              element={<PlayerStatsPage name={name} />}
+            />
+          ))}
         </Routes>
       </Router>
     </div>

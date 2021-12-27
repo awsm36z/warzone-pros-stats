@@ -9,22 +9,19 @@ export const getPlayers = async () => {
     const $ = await cheerio.load(html.data);
     let data = [];
 
-    $('tr.highlight').each((i, elem) => {
-        const playerID = $(elem).find('td.detail_list_player').children().get(1).children[0].data
-        console.log(playerID)
-        data.push(playerID)
-      });
-    return data
+    $("tr.highlight").each((i, elem) => {
+      const playerID = $(elem).find("td.detail_list_player").children().get(1)
+        .children[0].data;
+        let tempData = [ ...data, playerID];
+      data = tempData;
+    });
+    
+    return data.toString().split(",");
   } catch (error) {
     console.error("ERROR in players.js " + error);
   }
 };
 
-export const players = [
-  "diazbiffle",
-  "aydan",
-  "huskerrs",
-  "icemanisaac",
-  "tommey",
-  "nickmercs",
-];
+let x = ["tommey","diazbiffle"]
+let tmp = [...x,"aydan"]
+export let players = tmp;
