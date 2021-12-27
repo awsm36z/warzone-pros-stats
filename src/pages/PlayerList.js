@@ -5,16 +5,16 @@ import { useState, useEffect } from "react";
 const PlayerList = () => {
   const [players, setPlayers] = useState(["nickmercs", "swagg", "diazbiffle"]);
 
-  const createPlayersList = async () => {
-    getPlayers().then((list) => {
-      setPlayers(list);
-      console.log("\nhere is the list\n" + players);
-    });
-  };
+//   const createPlayersList = async () => {
+//     getPlayers().then((list) => {
+//       setPlayers(list);
+//       console.log("\nhere is the list\n" + players);
+//     });
+//   };
 
-  useEffect(() => {
-    createPlayersList();
-  }, []);
+//   useEffect(() => {
+//     createPlayersList();
+//   }, []);
   return (
     <div className="list">
       {players.map((name) => (

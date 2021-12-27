@@ -11,15 +11,15 @@ import { useState, useEffect } from "react";
 function App() {
   const [players, setPlayers] = useState(["nickmercs","swagg","diazbiffle"]);
 
- const createPlayersList = async () => {
-  getPlayers().then((list) => {
-    setPlayers(list)
-    console.log("\nhere is the list\n" + players)
-  })
-}
+//  const createPlayersList = async () => {
+//   getPlayers().then((list) => {
+//     setPlayers(list)
+//     console.log("\nhere is the list\n" + players)
+//   })
+// }
 
   useEffect(() => {
-    createPlayersList()
+    // createPlayersList()
   }, []);
 
   return (
