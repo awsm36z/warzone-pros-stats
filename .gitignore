@@ -24,3 +24,5 @@ yarn-error.log*
 src/config/consts.js
 package-lock.json
 src/config/firebaseconfig.js
+src/firebase/firebase.js
+src/firebase/firebase.js

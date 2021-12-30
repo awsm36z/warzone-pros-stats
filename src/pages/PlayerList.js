@@ -1,27 +1,35 @@
 import "../Css_Styles/PlayerList.css";
 import { getPlayers } from "../config/players";
 import { useState, useEffect } from "react";
+import { collection, doc, getDocs } from "firebase/firestore";
+import { db } from "../firebase/firebase";
 
-const PlayerList = () => {
-  const [players, setPlayers] = useState(["nickmercs", "swagg", "diazbiffle"]);
+const PlayerList = (props) => {
+    const [players, setPlayers] = useState()
+    const usersCollectionRef = collection(db, "Players")
+    const [loading, setLoading] = useState(true);
 
-//   const createPlayersList = async () => {
-//     getPlayers().then((list) => {
-//       setPlayers(list);
-//       console.log("\nhere is the list\n" + players);
-//     });
-//   };
+    const addPlayers = () => {
 
-//   useEffect(() => {
-//     createPlayersList();
-//   }, []);
-  return (
+    }
+
+  useEffect(() => {
+    setPlayers(props.playerslist)
+    setLoading(players == undefined);
+    console.log(players)
+  }, [players]);
+
+  return ( 
     <div className="list">
-      {players.map((name) => (
-        <a href={`/${name}`} key={name}>
-          {name}
+        {loading ? <h1>loading</h1> : 
+        <div>
+      {players.map((player) => (
+        <a href={`/${player.name}`} key={player.name}>
+          {player.name}
         </a>
       ))}
+      </div>
+      }
     </div>
   );
 };

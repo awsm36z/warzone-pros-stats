@@ -21,7 +21,3 @@ export const getPlayers = async () => {
     console.error("ERROR in players.js " + error);
   }
 };
-
-let x = ["tommey","diazbiffle"]
-let tmp = [...x,"aydan"]
-export let players = tmp;
