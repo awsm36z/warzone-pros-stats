@@ -17,8 +17,7 @@ function App() {
 
   //  const createPlayersList = async () => {
   //   getPlayers().then((list) => {
-  //     setPlayers(list)
-  //     console.log("\nhere is the list\n" + players)
+  //     console.log("\nhere is the list\n" + list)
   //   })
   // }
 
@@ -29,6 +28,7 @@ function App() {
     setLoading(false);
   };
   useEffect(() => {
+    // createPlayersList()
     initPlayers();
   }, [loading]);
   console.log(players)
