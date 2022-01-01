@@ -8,9 +8,6 @@ import { getTwitchToken } from "../utils/authUser";
 const PlayerStatsPage = (props) => {
   const [name, setName] = useState(props.player.name);
   const [playerIcon, setPlayerIcon] = useState();
-    //get from a different api, or maybe webscrape from stats page.
-  //const [realName, setRealName] = useState(props.realName);
-  // const [earnings, setEarnings] = useState(205495.5);
   const [player, setPlayer] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   

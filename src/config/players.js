@@ -1,6 +1,5 @@
 import axios from "axios";
 import cheerio from "cheerio";
-
 export const getPlayers = async () => {
   try {
     let html = await axios.get(
@@ -21,3 +20,4 @@ export const getPlayers = async () => {
     console.error("ERROR in players.js " + error);
   }
 };
+
