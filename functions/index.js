@@ -17,7 +17,7 @@ admin.initializeApp({
 // });
 
 
-  
+//getter function for players list 
 exports.getPlayers =  functions.https.onCall( async (data, constext) => {
     const players = await admin.firestore().collection("Players").get();
     return players.docs.map((doc) => doc.data());

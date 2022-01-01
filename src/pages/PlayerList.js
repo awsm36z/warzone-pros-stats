@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 
 const PlayerList = (props) => {
   const players = props.playerslist;
-  console.log(players)
 //     const usersCollectionRef = collection(db, "Players")
     const [loading, setLoading] = useState(false);
 

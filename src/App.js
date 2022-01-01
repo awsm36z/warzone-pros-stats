@@ -23,7 +23,6 @@ function App() {
   useEffect(() => {
     getplayers();
   }, []);
-console.log(players)
   return (
     <div className="App">
       <Navbar />
@@ -33,7 +32,6 @@ console.log(players)
           <Route path="/playerstatspage" element={<Home />} />
           {players.map((player) => {
             let name = player.name;
-            console.log(name)
             return (
               <Route
                 path={`/${name}`}

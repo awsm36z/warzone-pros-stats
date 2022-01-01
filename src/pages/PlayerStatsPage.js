@@ -31,7 +31,6 @@ const PlayerStatsPage = (props) => {
   useEffect(() => {
     fetchData()
     setIsLoading(false)
-    console.log(player)
   },[isLoading]);
 
 
