@@ -6,11 +6,12 @@ import {TWITCH_GET_USER} from "../config/consts";
 import { getTwitchToken } from "../utils/authUser";
 
 const PlayerStatsPage = (props) => {
-  const [name, setName] = useState(props.player.name);
+
   const [playerIcon, setPlayerIcon] = useState();
-  const [player, setPlayer] = useState([]);
+  const [player, setPlayer] = useState(props.player);
   const [isLoading, setIsLoading] = useState(true);
-  
+  const name = player.name;
+
   const fetchData = async () => {
     const token = await getTwitchToken();
     try {
@@ -29,7 +30,9 @@ const PlayerStatsPage = (props) => {
   //Get user Data
   useEffect(() => {
     fetchData()
-  },[]);
+    setIsLoading(false)
+    console.log(player)
+  },[isLoading]);
 
 
 
