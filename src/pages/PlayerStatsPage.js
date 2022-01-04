@@ -9,6 +9,7 @@ const PlayerStatsPage = (props) => {
 
   const [playerIcon, setPlayerIcon] = useState();
   const [player, setPlayer] = useState(props.player);
+  const [playerData, setPlayerData] = useState();
   const [isLoading, setIsLoading] = useState(true);
   const name = player.name;
 
@@ -19,7 +20,7 @@ const PlayerStatsPage = (props) => {
         `${TWITCH_GET_USER}?login=${name}`,
         {headers: {"Authorization": `Bearer ${token}`}}
       );
-        setPlayer(result.data.data[0])
+        setPlayerData(result.data.data[0])
         setPlayerIcon(result.data.data[0].profile_image_url)
       } catch(error){
         console.error("There was an error!")
@@ -32,8 +33,6 @@ const PlayerStatsPage = (props) => {
     fetchData()
     setIsLoading(false)
   },[isLoading]);
-
-
 
   return (
     <div className="PlayerStatsPage">

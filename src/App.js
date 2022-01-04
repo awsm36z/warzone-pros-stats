@@ -7,19 +7,21 @@ import PlayerList from "./pages/PlayerList";
 // import { getPlayers } from "./config/players";
 import { useState, useEffect } from "react";
 import firebaseconfig from "./config/firebaseconfig";
-import {initializeApp} from "firebase/app"
-import {getFunctions, httpsCallable} from "firebase/functions"
+import { initializeApp } from "firebase/app";
+import { getFunctions, httpsCallable } from "firebase/functions";
 
 const app = initializeApp(firebaseconfig);
 const functions = getFunctions(app);
 
 function App() {
   const [players, setPlayers] = useState([]);
+
   const getplayers = async () => {
-    const getPlayers =  await httpsCallable(functions, "getPlayers");
-    const tlist = await getPlayers({})
-    setPlayers(tlist.data)
-  }
+    const getPlayers = await httpsCallable(functions, "getPlayers");
+    const tlist = await getPlayers({});
+    setPlayers(tlist.data);
+  };
+
   useEffect(() => {
     getplayers();
   }, []);
@@ -40,7 +42,10 @@ function App() {
               />
             );
           })}
-          <Route path="/playerlist" element={<PlayerList playerslist = {players} />} /> 
+          <Route
+            path="/playerlist"
+            element={<PlayerList playerslist={players} />}
+          />
         </Routes>
       </Router>
     </div>
