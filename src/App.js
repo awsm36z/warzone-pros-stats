@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import PlayerStatsPage from "./pages/PlayerStatsPage";
 import PlayerList from "./pages/PlayerList";
-// import { getPlayers } from "./config/players";
 import { useState, useEffect } from "react";
 import firebaseconfig from "./config/firebaseconfig";
 import { initializeApp } from "firebase/app";

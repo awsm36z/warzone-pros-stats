@@ -25,6 +25,8 @@ src/config/consts.js
 package-lock.json
 src/config/firebaseconfig.js
 
+firebase-dubug.log
+
 functions/serviceAccount.json
 functions/serviceAccount.json
 functions/serviceAccount.json

@@ -38,9 +38,12 @@ const Home = () => {
       {loading ? (
         <h1>loading</h1>
       ) : (
+        <div>
         <a href={`/${recentTourney[0].name}`}>
           Most recent Tournament: {recentTourney[0].name}
         </a>
+        <h1>{Date().toLocaleLowerCase()}</h1>
+        </div>
       )}
       <RecentTournaments />
     </div>
