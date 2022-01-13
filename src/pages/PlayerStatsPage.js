@@ -11,7 +11,7 @@ const PlayerStatsPage = (props) => {
   const [player, setPlayer] = useState(props.player);
   const [playerData, setPlayerData] = useState();
   const [isLoading, setIsLoading] = useState(true);
-  const name = player.name;
+  const name = player.username;
 
   const fetchData = async () => {
     const token = await getTwitchToken();
@@ -35,9 +35,9 @@ const PlayerStatsPage = (props) => {
   },[isLoading]);
 
   return (
-    <div className="PlayerStatsPage">
+    <div>
       {isLoading ? <h>loading</h> :
-      <div>  
+      <div className="PlayerStatsPage">  
       <img className="playerIcon" src={playerIcon} alt="no image" height="300" />
       <a href={"https://twitch.tv/" + name} className="twitchChannel">
         Twitch channel

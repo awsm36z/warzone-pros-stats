@@ -6,21 +6,18 @@ import { useState, useEffect } from "react";
 const PlayerList = (props) => {
   const players = props.playerslist;
 //     const usersCollectionRef = collection(db, "Players")
-    const [loading, setLoading] = useState(false);
+
 
 
   return ( 
     <div className="list">
-        {loading ? <h1>loading</h1> : 
-        <div className = "list">
+
       {players.map((player) => (
-        <a href={`/${player.name}`} key={player.name}>
-          {player.name}
+        <a href={`/${player.username}`} key={player.username}>
+          {player.username}
         </a>
       ))}
       </div>
-      }
-    </div>
   );
 };
 
