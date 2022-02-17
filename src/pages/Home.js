@@ -1,13 +1,11 @@
 import React from "react";
-import Navbar from "../components/Navbar";
 import RecentTournaments from "../components/RecentTournamentsCard";
 import "../Css_Styles/Home.css";
 import { useState, useEffect } from "react";
 import firebaseconfig from "../config/firebaseconfig";
 import { initializeApp } from "firebase/app";
 import { getFunctions, httpsCallable } from "firebase/functions";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import PlayerStatsPage from "./PlayerStatsPage";
+import playerCard from "../components/playerCard";
 
 const app = initializeApp(firebaseconfig);
 const functions = getFunctions(app);
@@ -35,6 +33,9 @@ const Home = () => {
   return (
     <div className="Home">
       <a href="/playerlist">CLICK HERE TO GET STARTED</a>
+      <div>
+        <playerCard />
+      </div>
       {loading ? (
         <h1>loading</h1>
       ) : (

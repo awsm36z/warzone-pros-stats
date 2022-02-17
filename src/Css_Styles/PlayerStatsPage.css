@@ -1,15 +1,24 @@
 .PlayerStatsPage {
     background-color: rgba(228, 228, 228, 0.733);
     background-size: 800px;
+    display: flex;
+    flex-direction: row;
 }
 
-.PlayerIcon{}
+.playerIcon{
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    position: absolute;
+}
+
+.streamPlayer{
+    position: relative;
+    justify-self: flex-start;
+}
 
 .PlayerBio{}
 
-.playerPortrait {
-    align-self: center;    
-}
 
 .streamPlayer {
     align-self: flex-end;
