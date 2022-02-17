@@ -3,3 +3,10 @@
     flex-direction: column;
     flex: 1;
 }
+
+.playerlistcard{
+    display:flex;
+    width: 30px;
+    height: 15px;
+    background-color: rgba(223, 103, 22, 0.432);
+}

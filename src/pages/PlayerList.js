@@ -1,11 +1,10 @@
 import "../Css_Styles/PlayerList.css";
 import { useState, useEffect } from "react";
-// import { collection, doc, getDocs } from "firebase/firestore";
-// import { db } from "../firebase/firebase";
+import PlayerListCard from "../components/PlayerListCard";
+
 
 const PlayerList = (props) => {
   const players = props.playerslist;
-//     const usersCollectionRef = collection(db, "Players")
 
 
 
@@ -13,9 +12,7 @@ const PlayerList = (props) => {
     <div className="list">
 
       {players.map((player) => (
-        <a href={`/${player.username}`} key={player.username}>
-          {player.username}
-        </a>
+        <PlayerListCard playerName={player.username} />
       ))}
       </div>
   );
